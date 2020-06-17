@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>JinPortfolio</title>
 <link rel="stylesheet" href="css/style.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/6f2f0f2d95.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -15,15 +17,117 @@
 			<div class="profileInfo">
 				<p>유경진</p>
 				<p>신입 JAVA 개발자(백엔드)</p>
+				<p>
+					<a class="hover lightGray" href="https://github.com/yoogj0513" target="_blank">GITHUB</a> . 
+					<a class="hover lightGray" href="https://blog.naver.com/yoogj0513" target="_blank">NAVER_BLOG</a> .
+					<a class="hover lightGray" href="https://toro-0513.tistory.com/" target="_blank">TISTORY_BLOG</a> 
+				</p>
 			</div>
 		</header>
 		
-		<nav>
-		
+		<nav class="menus">
+			<ul>
+				<li><a class="hover menu" data-id="profile" href="#">PROFILE</a></li>
+				<li><a class="hover menu" data-id="skill" href="#">SKILL</a></li>
+				<li><a class="hover menu" data-id="project1" href="#">PROJECT</a></li>
+			</ul>
 		</nav>
 		
 		<section>
-		
+			<article id="profile">
+				<div class="myInfo float-left">
+					<div>
+						<p>이름 : 유경진</p>
+						<p>생년월일 : 1989.05.13</p>
+						<p>이메일 : yoogj0513@naver.com</p>
+						<div class="blogsIcon">
+							<div class="gitIcon icon">
+								<a class="lightBlack" href="https://github.com/yoogj0513" target="_blank">
+									<i class="fab fa-github"></i>
+								</a>
+							</div>
+							<div class="naverIcon icon ">
+								<a class="imgIcon" href="https://blog.naver.com/yoogj0513" target="_blank">
+									<img class="naverImg" src="images/naver.png" alt="네이버블로그" />
+								</a>
+							</div>
+							<div class="tistoryIcon icon">
+								<a class="imgIcon" href="https://toro-0513.tistory.com/" target="_blank">
+									<img class="tistoryImg" src="images/tistory.svg" alt="티스토리" />
+								</a> 
+							</div>
+						</div>
+					</div>	
+				</div>
+				<div class="history float-right">
+					<ul class="listStyle-disc">
+						<li>
+							2017.12 - 2018.07 
+							<br> 스마트웹&콘텐츠서비스개발 과정 이수 (그린컴퓨터디자인학원)
+						</li>
+						<li>
+							2018.07 - 2019.08 
+							<br> COLORLEN 근무 (웹퍼플리셔) 
+							<br> - 회사 웹페이지 제작(반응형) : <a class="hover" href="http://colorlen.com/" target="_blank">http://colorlen.com/</a>
+						</li>
+						<li>
+							2019.04 - 2019.06
+							<br> 안드로이드APP개발 입문[재직자과정] 이수 (능력개발원 새일다밀)
+						</li>
+						<li>
+							2019.10 - 2020.06 
+							<br> JAVA개발 스마트 웹&컨텐츠 응용 SW 전문가 이수 (영남인재교육원)
+						</li>	
+					</ul>
+				</div>
+			</article>
+			
+			<article id="skill">
+				<h2>SKILL</h2>
+				<div class="skillList">
+					<ul>
+						<li>
+							<div class="imgBox">
+								<img src="images/java.png" alt="java"/>
+							</div>
+						</li>
+						<li>
+							<div class="imgBox">
+								<img src="images/mysql.svg" alt="mysql" />
+							</div>
+						</li>
+						<li>
+							<div class="imgBox">
+								<img src="images/spring.png" alt="spring" />
+							</div>
+						</li>
+						<li>
+							<div class="imgBox">
+								<img src="images/html5.png" alt="html" />
+							</div>
+						</li>
+						<li>
+							<div class="imgBox">
+								<img src="images/css3.png" alt="css" />
+							</div>
+						</li>
+						<li>
+							<div class="imgBox">							
+								<img src="images/javascript.png" alt="javascript" />
+							</div>
+						</li>
+						<li>
+							<div class="imgBox">
+								<img src="images/jquery.png" alt="jquery" />
+							</div>
+						</li>
+					</ul>
+				</div>
+			</article>
+			
+			<article id="project1">
+			
+			</article>
 		</section>
 		
 		
@@ -32,4 +136,34 @@
 		</footer>
 	</div>
 </body>
+
+<script>
+	$(".menu").click(function(){
+		var id = $(this).attr("data-id");
+		var offset = $("#"+id).offset();
+		
+		if($(".menus").hasClass("fixed")){
+			$("html, body").stop().animate({scrollTop : offset.top - 70}, 300);
+		} else {
+			$("html, body").stop().animate({scrollTop : offset.top - 150}, 300);			
+		}
+		
+		return false;
+	})
+	
+	
+	var menuTop = $(".menus").offset().top;
+	
+	$(window).scroll(function(){
+		var top = $(this).scrollTop();
+		if(top > menuTop) {
+			$(".menus").addClass("fixed");
+			$(".menus ul").addClass("fixedW");
+		} else {
+			$(".menus").removeClass("fixed");
+			$(".menus ul").removeClass("fixedW");
+		}
+	})
+</script>
+
 </html>

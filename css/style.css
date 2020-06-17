@@ -15,6 +15,14 @@ a {
 	color: #000;
 }
 
+a.hover:hover {
+	font-weight: 700;
+	color: #9055A2;
+}
+
+ul {
+	list-style: none;
+}
 
 .container {
 	width: 1024px;
@@ -23,10 +31,32 @@ a {
 	
 }
 
+.float-left {
+	float: left;
+	width: 50%;
+} 
+
+.float-right {
+	float: right;
+	width: 50%;
+}
+
+.listStyle-disc {
+	list-style: disc;
+}
+
+/* 폰트색상 */
+.lightGray {
+	color: #9baec8;
+}
+
+.lightBlack {
+	color: #333333;
+}
 
 /* header */
 header {
-	
+	margin-bottom: 20px;
 }
 
 header div.profileImg {
@@ -36,7 +66,7 @@ header div.profileImg {
 	border-radius: 50px;
 	position: relative;
 	margin: 50px auto;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 
 header div.profileImg img {
@@ -57,13 +87,206 @@ header div.profileInfo p:nth-of-type(1) {
 }
 
 
+/* nav */
+nav {
+	border-bottom: 1px solid #c9d6de;
+    margin-bottom: 30px;
+}
+
+.fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #fff;
+	z-index: 1;
+}
+
+nav ul {
+	overflow: hidden;
+	width: 80%;
+	margin: 0 auto;
+	padding: 15px 0;
+}
+
+.fixedW {
+	width: 43%;	
+}
+
+nav ul li {
+	float: left;
+	width: 33.33%;
+	text-align: center;
+}
+
+/* section */
+article {
+	box-shadow: 0px 0px 15px #f0f5f9;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 30px 40px;
+    margin-bottom: 30px;
+}
+
+/* 프로필 */
+article div.myInfo {
+	width: 45%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+article div.myInfo p{
+	line-height: 35px;
+}
+
+article div.blogsIcon {
+	overflow: hidden;
+	width: 282px;
+	margin: 30px auto;
+	margin-bottom: 0;
+}
+
+div.blogsIcon div.icon {
+	position: relative;
+	width: 80px;
+	height: 80px;
+	border: 2px solid #c9d6de;
+	border-radius: 80px;
+	float: left;
+	margin-right: 15px;
+	text-align: center;
+}
+
+div.blogsIcon div.tistoryIcon {
+	margin-right: 0;
+}
+
+div.blogsIcon div.icon:hover {
+	border-color: #9055A2;
+}
+
+div.blogsIcon div.icon a {
+	font-size: 50px;
+	display: block;
+	height: 100%;
+}
+
+div.blogsIcon div.icon a.imgIcon {
+	line-height: 80px;
+}
+
+div.blogsIcon div.icon .naverImg {
+	width: 60%;
+}
+
+div.blogsIcon div.icon .tistoryImg {
+	width: 50%;
+}
+
+div.history ul {
+	line-height: 30px;
+}
+
+
+/* skill */
+#skill h2 {
+	margin-bottom: 30px;
+}
+
+div.skillList ul {
+	overflow: hidden;
+}
+
+div.skillList ul li {
+	float: left;
+	width: 30%;
+	margin-right: 5%;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+div.skillList ul li:nth-of-type(3n) {
+	margin-right: 0;
+}
+
+div.skillList div.imgBox {
+	width: 100%;
+	height: 150px;
+}
+
+div.skillList div.imgBox img {
+	height: 100%;
+}
+
+
+
+
+
+
+
+
 /* 반응형 */
+@media screen and (max-width: 1075px) {
+	.container {
+		width: 95%;
+	}
+	
+	.fixedW {
+		width: 80%;
+	}
+}
+
 @media screen and (max-width: 768px) {
 	.container {
 		width: 100%;
 		min-width: 320px;
 	}
 	
+	.fixedW {
+		width: 80%;
+	}
+	
+	article {
+		width: 70%;
+		margin: 30px auto;
+	}
+	
+	.float-left,
+	.float-right {
+		float: none;
+		width: 100% !important;
+		margin-bottom: 30px;
+	}
+	
+	/* 프로필 icon */
+	article div.blogsIcon {
+		width: 222px;
+	}
+	
+	div.blogsIcon div.icon {
+		width: 60px;
+		height: 60px;
+	}
+	
+	div.blogsIcon div.icon a {
+		font-size: 40px;
+	}
+	
+	div.blogsIcon div.icon a.imgIcon {
+		line-height: 60px;
+	}
+	
+	/* 스킬 icon */
+	div.skillList ul li {
+		margin-right: 0;
+		width: 50%;
+	}
+	
+	div.skillList div.imgBox img {
+		height: auto;
+		max-width: 90%;
+		max-height: 150px;
+	}
 }
 
 
