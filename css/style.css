@@ -45,6 +45,14 @@ ul {
 	list-style: disc;
 }
 
+.listStyle-circle {
+	list-style: circle;
+}
+
+.marginLeft30 {
+	margin-left: 30px;
+}
+
 /* 폰트색상 */
 .lightGray {
 	color: #9baec8;
@@ -128,6 +136,17 @@ article {
     margin-bottom: 30px;
 }
 
+article h2 {
+	margin-bottom: 30px;
+	/* font-size: 30px; */
+	border-bottom: 1px solid #f0f5f9;
+	padding: 5px;
+}
+
+article h3 {
+	font-size : 1.3em;
+}
+
 /* 프로필 */
 article div.myInfo {
 	width: 45%;
@@ -189,10 +208,6 @@ div.history ul {
 
 
 /* skill */
-#skill h2 {
-	margin-bottom: 30px;
-}
-
 div.skillList ul {
 	overflow: hidden;
 }
@@ -219,8 +234,19 @@ div.skillList div.imgBox img {
 }
 
 
+/* project */
+article.project div.projectImg {
+	width: 95%;
+	margin-top: 20px;
+}
 
+article.project div.projectImg img {
+	width: 100%;
+}
 
+article.project ul.projectUl {
+	line-height: 27px;
+}
 
 
 
